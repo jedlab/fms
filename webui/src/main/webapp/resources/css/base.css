@@ -1,0 +1,137 @@
+/* @font-face {
+	font-family: Vazir-Light;
+	font-style: normal;
+	font-weight: normal;
+	src: url("#{resource['fonts/Graphik-Light-Web.woff2']}");
+	src: FF39+,Chrome36+, Opera24+
+		url("#{resource['fonts/Graphik-Light-Web.woff2']}") format( 'woff'),
+		FF3.6+, IE9, Chrome6+, Saf5.1+
+		 url("#{resource['fonts/Graphik-Light-Web.woff2']}") format( 'truetype');
+} */
+
+
+@font-face {
+	font-family: Rhode;
+	font-style: normal;
+	font-weight: normal;
+	src: url("#{resource['fonts/Rhode-Medium-Condensed.woff2']}");
+	src: /* FF39+,Chrome36+, Opera24+*/
+		url("#{resource['fonts/Rhode-Medium-Condensed.woff2']}") format( 'woff'),
+		/* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url("#{resource['fonts/Rhode-Medium-Condensed.woff2']}") format( 'truetype');
+}
+
+
+html, body, header, footer, section {
+	font-family: Vazir-Light, Yekan, Tahoma, FontAwesome !important;
+}
+
+button {
+	font-family: Vazir-Light, Yekan, Tahoma, FontAwesome !important;
+}
+
+
+.error{
+	color: #ed0e0e;
+}
+
+span, label {
+	font-family: Vazir-Light, Yekan, Tahoma, FontAwesome !important;
+}
+
+input, textarea, select {
+	font-family: Vazir-Light, Yekan, Tahoma, FontAwesome !important;
+}
+
+a {
+	font-family: Vazir-Light, Yekan, Tahoma, FontAwesome !important;
+}
+
+h1, h2, h3,h4,h5,h6{
+	font-family: Rhode, Vazir-Light, Yekan, Tahoma, FontAwesome !important;
+}
+
+legend, fieldset{
+	font-family: Rhode, Vazir-Light, Yekan, Tahoma, FontAwesome !important;
+}
+
+div{
+	font-family: Vazir-Light, Yekan, Tahoma, FontAwesome !important;
+}
+
+table {
+	font-family: Vazir-Light, Yekan, Tahoma, FontAwesome !important;
+	border: none !important;
+}
+
+td, tr, th {
+	font-family: Vazir-Light, Yekan, Tahoma, FontAwesome !important;
+	padding: 20px 15px !important;
+	margin: 8px 15px !important;
+	border: none !important;
+	font-size: 18px !important;
+	border-bottom: #ccc !important;
+}
+
+th {
+	background-color: #2d353c !important;
+	color: #ffffff !important;
+}
+
+.logo {
+	background: none !important;
+}
+
+.landing-wrapper #header {
+	background: linear-gradient(45deg, #4a79a6 0%, #96e2de 100%) !important;
+}
+
+
+.input-form{
+	width: 100%;
+}
+
+.form-panel
+{
+	background-color: #f5f5f5 !important;
+	color:#000 !important;
+}
+
+.ui-selectmanycheckbox label{
+	margin: 0 16px 0 8px !important
+}
+
+
+.bot-float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#8ED6D8;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.bot-float-ic{
+	margin-top:22px;
+}
+
+.channel-float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:110px;
+	right:40px;
+	background-color:#4E7FA9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.channel-float-ic{
+	margin-top:22px;
+}

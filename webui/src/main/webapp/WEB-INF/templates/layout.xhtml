@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:o="http://omnifaces.org/ui"
+	xmlns:of="http://omnifaces.org/functions"
+	xmlns:sec="http://www.springframework.org/security/tags"	
+	xmlns:pfaces="http://omidbiz.com/ui"
+	xmlns:jedlab="http://java.sun.com/jsf/composite/comp"
+	lang="fa">
+<f:view contentType="text/html" encoding="UTF-8" locale="fa">
+	<c:set var="_ctx" value="#{request.contextPath}" />
+
+	<ui:insert name="metadata" />
+
+	<h:head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<title>
+		موپرا  <h:outputText value="#{' '}" /> 
+		<h:outputText value="#{messages['Application_Name']}" rendered="#{empty _title}"/>
+		<h:outputText value="#{_title}" rendered="#{not empty _title}"/>
+		
+		</title>
+				
+		
+		<f:facet name="last">
+		<h:outputStylesheet library="css" name="primefaces-omega.css"  />
+		<h:outputStylesheet library="css" name="w3.css"  />
+		<h:outputStylesheet library="css" name="w3-blue-grey.css"  />
+		<h:outputStylesheet library="css" name="semantic.min.css"  />
+		<h:outputStylesheet library="css" name="kube.css"  />
+		
+		
+		<h:outputStylesheet library="css" name="webapp.css"  />
+		</f:facet>
+
+		<h:outputScript library="primefaces" name="jquery/jquery.js"
+			target="head" />
+		
+		<h:outputScript library="primefaces" name="jquery/jquery-plugins.js"
+			target="head" />
+			
+		<h:outputScript library="js" name="semantic.min.js"
+			target="head" />	
+			
+		<h:outputScript library="js" name="common.js"
+			target="head" />	
+		
+		
+		<ui:insert name="head" />
+
+	</h:head>
+	<h:body>
+		
+		<h:form>
+			<p:poll global="false" immediate="true" interval="1800" listener="#{enumBean.increment}"></p:poll>
+		</h:form>		
+
+		<p:growl id="globalGrowl" widgetVar="globalGrowlWidget"
+			showDetail="true" showSummary="true" sticky="true" globalOnly="true" />
+
+		<div class="wrapper">
+		
+			<ui:include src="/WEB-INF/templates/sidebar.xhtml" />
+			
+			
+			<div class="w3-main w3-margin" style="margin-right:40px;margin-left:40px;margin-top:40px;padding-top:40px;width:95%">
+				
+				<ui:fragment rendered="#{securityBean.loggedIn and !securityBean.anonymous}">
+					<ui:include src="/WEB-INF/templates/header.xhtml" />
+				</ui:fragment>
+				
+				<ui:insert name="content"></ui:insert>
+			</div>
+			<div class="push">
+			</div>
+		</div>
+		<div style="clear:both;"></div>
+		<div class="footer">
+			<p></p>
+		</div>
+		
+		<div class="ui page dimmer" id="dimmerLoader">
+			<div class="ui text loader">#{messages['Loading']}</div>
+		</div>
+		
+		<script>
+			jQuery(document).ready(function(){
+				
+				jQuery(".ui-chkbox-all").hide();
+
+				var msg = jQuery(".ui-messages-info-summary").html();
+				if(msg == "")
+					jQuery("#uiMessages").hide();
+				
+				jQuery(".ui-chkbox-all").hide();
+				jQuery(".ui-columntoggler ").addClass("toggler-clz");
+				
+				
+			});
+
+			
+		</script>
+		
+		<p:ajaxStatus onstart="common.showLoading()" oncomplete="common.hideLoading()" ></p:ajaxStatus>
+		
+		 <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+	        <p:commandButton value="#{msgs['Yes']}" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+	        <p:commandButton value="#{msgs['No']}" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+    	</p:confirmDialog>
+
+		
+	</h:body>
+
+</f:view>
+</html>

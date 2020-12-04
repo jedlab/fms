@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
+<c:set var="_ctx" value="#{request.contextPath}" />
+    <h:head>
+     
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>            
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+            <title>FMS</title>
+
+        </f:facet>
+        <script type="text/javascript">
+        $(function() {
+            $('#menu-button').on('click', function(e) {
+                var menu = $('#menu');
+                if(menu.hasClass('lmenu-active')) {
+                    menu.addClass('fadeOutUp');
+                    
+                    setTimeout(function() {
+                        menu.removeClass('fadeOutUp fadeInDown lmenu-active');
+                    },500);
+                }
+                else {
+                    menu.addClass('lmenu-active fadeInDown');
+                }
+                e.preventDefault();
+            });
+        });
+        </script>
+    </h:head>
+
+    <h:body styleClass="landing-body">
+        <div class="landing-wrapper">
+            <div id="header">
+                <div class="header-top clearfix">
+                    <span class=""><h:graphicImage  value="resources/images/logo.png" width="45" height="45"></h:graphicImage> </span>
+                    
+                    <a id="menu-button" href="#"> 
+                       <span class="fa fa-bars"></span>
+                    </a>
+                    <ul id="menu" class="animated">
+                       <li><a href="#pricing"><span>Price</span></a></li>
+                       <li><a href="#video"><span>Contact us</span></a></li>
+                       <li><a href="#"><span>Home</span></a></li>
+                    </ul>
+                </div>
+                
+                <div class="header-content clearfix">
+                    <h1>FMS</h1>
+                    <h2>File management system</h2>
+                    <div >
+                    <p:link  value="Login"  styleClass="secondary  w3-button w3-khaki w3-border w3-round-large w3-padding w3-margin" href="/login"/>
+                    <br /><br/>
+                    
+                    </div>
+                </div>
+            </div>
+            
+            <div id="features">
+                <div class="ui-g">
+                    <div class="ui-g-12 ui-md-4">
+                        <div class="feature-icon">
+                            <p:graphicImage name="images/landing/landing-1.png" library="poseidon-layout" />
+                        </div>
+                        <h3>URL Upload</h3>
+                        <p>
+                        Upload with URL or from your computer
+                        </p>
+                    </div>
+                    <div class="ui-g-12 ui-md-4">
+                        <div class="feature-icon">
+                            <p:graphicImage name="images/landing/landing-2.png" library="poseidon-layout" />
+                        </div>
+                        <h3>File Management </h3>
+                        <p>
+                        	Share your files with your friends
+                        </p>
+                    </div>
+                    <div class="ui-g-12 ui-md-4">
+                        <div class="feature-icon">
+                            <p:graphicImage name="images/landing/landing-3.png" library="poseidon-layout" />
+                        </div>
+                        <h3> Security  </h3>
+                        <p>
+                        Choose a password for your files
+                        </p>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+    
+         
+
+            <div id="pricing">
+                <div class="pricing-content">
+                    <div class="ui-g">
+                        <div class="ui-g-12 ui-md-3">
+                            <div class="pricing-box pricing-basic">
+                                <div class="pricing-header">
+                                    <span class="pricing-name">Free Plan</span>
+                                    <span class="price"></span>
+                                </div>
+                                <div class="pricing-features">
+                                    <ul>
+                                               <li> <i class="fa fa-check"></i> 500 MB of space  </li>                                 
+                                    </ul>
+                                </div>
+                                                                
+                            </div>
+                        </div>
+                        <div class="ui-g-12 ui-md-3">
+                            <div class="pricing-box pricing-standard">
+                                <div class="pricing-header">
+                                    <span class="pricing-name">Gold Plan</span>
+                                    <span class="price"></span>
+                                </div>
+                                <div class="pricing-features">
+                                    <ul>
+                                        <li> <i class="fa fa-check"></i> 50 GB of space  </li>
+                                    </ul>
+                                </div>
+                                
+                            </div>
+                        </div>
+                       
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div id="video">
+               <div class="video-content">
+                   <h2>Contact us</h2>
+                   <p></p>
+                   <div class="video-container">
+                       
+                   </div>
+               </div>
+           </div>
+           
+           <div id="footer">
+               <div class="footer-content">
+                   <div class="ui-g">
+                        <div class="ui-g-12 ui-md-6 footer-left clearfix">
+                                                    
+                            
+                        </div>
+                        <div class="ui-g-12 ui-md-6 footer-right">
+                            
+                        </div>
+                    </div>
+               </div>
+           </div>
+        </div>
+        
+        
+        
+		
+        
+        <h:outputStylesheet name="css/animate.css" library="poseidon-layout" />
+        <h:outputStylesheet name="css/layout-blue.css" library="poseidon-layout" />
+        <h:outputStylesheet name="base.css" library="css" /> 
+        <link type="text/css" rel="stylesheet" href="#{_ctx}/resources/website/css/main.css" />
+        <link type="text/css" rel="stylesheet" href="#{_ctx}/resources/css/w3.css" /> 
+         
+    </h:body>
+
+</html>

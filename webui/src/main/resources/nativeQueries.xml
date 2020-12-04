@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nativeQueries>
+
+
+<token queryName="deleteUnused">
+<![CDATA[
+delete from login_activity where id in 
+(select la.id from login_activity la 
+left join sec_user u on
+la.username = u.user_name
+where token is null or la.user_id <> u.id or last_used <= ('now'::timestamp - '1 week'::interval)
+) 
+]]>
+</token>
+
+
+
+</nativeQueries>

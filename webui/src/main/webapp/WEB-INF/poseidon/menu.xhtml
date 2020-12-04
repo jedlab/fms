@@ -1,0 +1,48 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:sec="http://www.springframework.org/security/tags"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:pp="http://primefaces.org/poseidon">
+
+	<h:form id="menuform">
+		<div class="layout-menu-container">
+			<div class="nano">
+				<div class="nano-content menu-scroll-content">
+					<div class="search-input"></div>
+										<pp:menu>
+
+							<p:menuitem value="#{msgs['Home']}" 
+							id="home_mi"
+							icon="fa fa-fw fa-home"
+								url="/secure/dashboard" />
+								
+							<p:menuitem value="my files" icon="fa fa-fw fa-file"
+								id="file_mi"
+								 url="/secure/fileList"/>
+								 
+								 
+								 	 	
+							<p:menuitem value="sign out" icon="fa fa-fw fa-sign-out"
+								id="logout_mi"
+								 url="/logout"/>	
+								
+					</pp:menu>			
+					<ui:fragment rendered="#{not empty dashboardAction.instance}">
+					<div class="layout-menu-footer">
+                        <span class="layout-menu-footer-title">Plan overview</span>
+                        
+                        <p:progressBar value="0" labelTemplate="" displayOnly="true"/>
+                        remaining space
+                        
+                        
+                    </div>
+                    </ui:fragment>
+
+				</div>
+			</div>
+		</div>
+	</h:form>
+</ui:composition>

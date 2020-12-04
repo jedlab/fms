@@ -1,0 +1,118 @@
+.dialog {
+  --bg: #fff;
+  --backdrop: rgba(0,0,0,0);
+  --header-bg: var(--bg);
+  --header-border: 1px solid #ccc;
+  overflow: hidden;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--backdrop);
+  visibility: hidden;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.dialog--right .dialog__body {
+  right: 0;
+  left: auto;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.dialog--open {
+  --backdrop: rgba(0,0,0,.5);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  visibility: visible;
+}
+.dialog--open .dialog__body {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.dialog__body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30vw;
+  height: 100vh;
+  background-color: var(--bg);
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-flow: column nowrap;
+  overflow: hidden auto;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+@media (min-width: 550px) {
+  .dialog__body {
+    min-width: 550px;
+  }
+}
+@media (max-width: 500px) {
+  .dialog__body {
+    width: 100vw;
+  }
+}
+
+.dialog__header {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: var(--bg);
+  border-bottom: var(--header-border);
+  padding: 5px 15px;
+  margin: 0 -10px;
+}
+.dialog__header > * {
+  margin: 0 10px;
+}
+
+.dialog__content {
+  -webkit-box-flex: 1;
+          flex: 1 0 0;
+  padding: 15px;
+  line-height: 1.25;
+}
+
+.dialog__close {
+  border: 0;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  outline: none;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  padding: 0;
+}
+.dialog__close > * {
+  max-width: 100%;
+}
+.dialog__close:hover {
+  background-color: #ccc;
+}
+
