@@ -66,14 +66,12 @@
 
 		<div class="wrapper">
 		
-			<ui:include src="/WEB-INF/templates/sidebar.xhtml" />
+			
 			
 			
 			<div class="w3-main w3-margin" style="margin-right:40px;margin-left:40px;margin-top:40px;padding-top:40px;width:95%">
 				
-				<ui:fragment rendered="#{securityBean.loggedIn and !securityBean.anonymous}">
-					<ui:include src="/WEB-INF/templates/header.xhtml" />
-				</ui:fragment>
+				<ui:include src="/WEB-INF/templates/header.xhtml" />
 				
 				<ui:insert name="content"></ui:insert>
 			</div>

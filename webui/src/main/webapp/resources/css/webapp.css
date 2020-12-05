@@ -20,8 +20,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dir-rtl {
-	direction: rtl;
-	text-align: right;
+	
 }
 
 .div-center {
@@ -94,13 +93,12 @@ html, body {
 
 .ui-message-info, .ui-message-error, .ui-message-warn, .ui-message-fatal
 	{
-	direction: rtl;
+	
 	margin: 0;
 }
 
 form, .form-item {
-	direction: rtl;
-	text-align: right;
+	
 }
 
 .btn-icon>span {
@@ -158,11 +156,11 @@ form, .form-item {
 	color: #fff;
 	/**background-color: #01567C;*/
 	background-color: #000;
-	text-align: right !important;
+	text-align: left !important;
 }
 
 #uiMessages {
-	direction: rtl;
+	
 }
 
 .ui-messages-error-icon {
@@ -170,7 +168,7 @@ form, .form-item {
 }
 
 fieldset {
-	direction: rtl;
+	
 }
 
 .rtl-dir {
@@ -228,7 +226,7 @@ table.ui.celled.striped.table.txtalign tbody tr td {
 }
 
 div.ui-growl-message p {
-	direction: rtl;
+	
 }
 
 .ui-tabs .ui-tabs-nav>li.ui-state-default.ui-state-active {
