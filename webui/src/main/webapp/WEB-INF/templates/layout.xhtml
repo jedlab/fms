@@ -10,8 +10,8 @@
 	xmlns:sec="http://www.springframework.org/security/tags"	
 	xmlns:pfaces="http://omidbiz.com/ui"
 	xmlns:jedlab="http://java.sun.com/jsf/composite/comp"
-	lang="fa">
-<f:view contentType="text/html" encoding="UTF-8" locale="fa">
+	lang="en">
+<f:view contentType="text/html" encoding="UTF-8" locale="en">
 	<c:set var="_ctx" value="#{request.contextPath}" />
 
 	<ui:insert name="metadata" />
@@ -21,7 +21,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
 		<title>
-		موپرا  <h:outputText value="#{' '}" /> 
+		FMS  <h:outputText value="#{' '}" /> 
 		<h:outputText value="#{messages['Application_Name']}" rendered="#{empty _title}"/>
 		<h:outputText value="#{_title}" rendered="#{not empty _title}"/>
 		

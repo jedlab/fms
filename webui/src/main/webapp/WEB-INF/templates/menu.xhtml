@@ -8,90 +8,9 @@
 	xmlns:sec="http://www.springframework.org/security/tags"
 	xmlns:jedlab="http://java.sun.com/jsf/composite/comp">
 
-	<!-- Navbar -->
-	<div class="w3-top">
-		<div class="w3-bar w3-msection w3-card w3-left-align w3-large">
-		</div>
+	
 
-
-
-
-	</div>
-
-
-	<div class="fixed-top">
-		<div class="container header-container">
-			<div class="row justify-content-md-center rtl-dir">
-				<div class="col-12 col-lg-auto header-logo">
-					<div class="logo-menu">
-						<a href="#{_ctx}/home" class="logo"> <img
-							src="#{_ctx}/resources/website/img/splash_logo.png" alt=""
-							width="51px" height="px" />
-						</a>
-					</div>
-					<div class="header-menu-btn">
-						<button class="menu-button" id="open-button">
-							<i class="lnr lnr-menu"></i>
-						</button>
-					</div>
-				</div>
-				<div class="col header-menu">
-					<ul class="navbar-nav-top">
-						<li class="nav-item-top"><a class="nav-top-link"
-							href="#{_ctx}/download">اپلیکیشن موپرا</a></li>
-
-						<li class="nav-item-top"><a class="nav-top-link"
-							href="#{_ctx}/faceToFaceBiz">کسب و کارهای حضوری</a></li>
-
-						<li class="nav-item-top"><a class="nav-top-link"
-							href="#{_ctx}/Tariffs">تعرفه ها</a></li>
-
-						<li class="nav-item-top"><a class="nav-top-link"
-							href="#{_ctx}/login">ورود</a></li>
-					</ul>
-
-				</div>
-			</div>
-
-		</div>
-	</div>
-
-	<div class="menu-wrap">
-		<nav class="menu navbar">
-			<div class="icon-list navbar-collapse">
-				<ul class="navbar-nav">
-
-					<li class="nav-item"><a class="nav-link"
-						href="#{_ctx}/download">اپلیکیشن موپرا</a></li>
-
-					<li class="nav-item"><a class="nav-link"
-						href="#{_ctx}/faceToFaceBiz">کسب و کارهای حضوری</a></li>
-
-					<li class="nav-item"><a class="nav-link"
-						href="#{_ctx}/Tariffs">تعرفه ها</a></li>
-
-					<li class="nav-item"><a class="nav-link" href="#{_ctx}/login">ورود</a></li>
-
-				</ul>
-			</div>
-		</nav>
-		<button class="close-button" id="close-button">
-			<i class="lnr lnr-cross"></i>
-		</button>
-	</div>
-
-
-	<script>
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else { 
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
-</script>
+	
 
 </ui:composition>
 
