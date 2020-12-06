@@ -1,0 +1,64 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:jedlab="http://java.sun.com/jsf/composite/comp"
+	xmlns:sec="http://www.springframework.org/security/tags"
+                template="/WEB-INF/templates/layout.xhtml">
+
+
+	<ui:define name="metadata">
+		<f:metadata>
+			
+		</f:metadata>
+	</ui:define>
+	
+	<ui:define name="head">
+          
+       </ui:define>
+
+	<ui:define name="content">
+		
+		<h1>Register</h1>
+		<h:outputText value="#{registerAction.message}"></h:outputText>
+		
+		<h:form>
+			<ui:decorate template="/WEB-INF/templates/sameLineEdit.xhtml">
+				<ui:define name="label">Username : </ui:define>
+				<h:inputText value="#{registerAction.instance.username}" id="uname" required="true"></h:inputText>
+				<ui:define name="desc">Enter Username </ui:define>
+				<ui:define name="msg">
+					<p:message for="uname"></p:message>
+				</ui:define>
+				<ui:param name="required" value="true"></ui:param>
+			</ui:decorate>
+			
+			<ui:decorate template="/WEB-INF/templates/sameLineEdit.xhtml">
+				<ui:define name="label">Password : </ui:define>
+				<h:inputSecret value="#{registerAction.instance.password}" id="passwd" required="true"></h:inputSecret>
+				<ui:define name="msg">
+					<p:message for="passwd"></p:message>
+				</ui:define>
+				<ui:param name="required" value="true"></ui:param>
+			</ui:decorate>
+			
+			<ui:decorate template="/WEB-INF/templates/sameLineEdit.xhtml">
+				<ui:define name="label">Email : </ui:define>
+				<h:inputText value="#{registerAction.instance.email}" id="email" required="true"></h:inputText>
+				<ui:define name="desc">for activation </ui:define>
+				<ui:define name="msg">
+					<p:message for="email"></p:message>
+				</ui:define>
+				<ui:param name="required" value="true"></ui:param>
+			</ui:decorate>
+			
+			<h:commandButton value="Submit" action="#{registerAction.register()}"></h:commandButton>
+			
+		</h:form>
+		
+		
+	</ui:define>
+
+</ui:composition>
+
