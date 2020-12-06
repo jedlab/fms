@@ -48,6 +48,11 @@ public class UserService extends AbstractCrudService<UserEntity> {
 			return false;
 		return true;
 	}
+	
+	@Transactional
+	public Optional<UserEntity> getUserByUsername(String username) {
+		return userDao.getByUsername(username);
+	}
 
 	@Transactional
 	public void activateUserById(long userId) {

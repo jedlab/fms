@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+        </f:facet>
+        <title>FMS Login</title>
+    </h:head>
+
+    <h:body styleClass="login-body">
+    	<p:growl id="growl" showDetail="true" sticky="true" />
+    	<c:if test="#{securityBean.loggedIn and !securityBean.anonymous}">
+			<div style="display:none">
+			<h:button  id="submit" value="Submit" outcome="/secure/dashboard?faces-redirect=true" />
+			</div>
+			<script>
+				jQuery(document).ready(function(){
+					jQuery("#submit").click();
+				});
+			</script>
+		</c:if>
+		<c:if test="#{!securityBean.loggedIn or securityBean.anonymous}">
+		<form name="f" action="${request.contextPath}/loginProcess"
+				method="post">
+        <div class="login-panel ui-fluid">
+            <div class="ui-g">
+                <div class="ui-g-12 logo-container">
+                    <h:graphicImage  value="resources/images/logo.png" width="45" height="45"></h:graphicImage> 
+                </div>
+                <div class="ui-g-12">
+                	<a href="/home">
+                    FMS Login
+                    </a>
+                </div>
+                <div class="ui-g-12">
+                   <c:if test="${not empty param.error}">
+						<div class="error dir-rtl">
+							
+							
+							#{sessionScope.SPRING_SECURITY_LAST_EXCEPTION.message}
+						</div>
+					</c:if>
+                </div>
+                <div class="ui-g-12">                    
+                    <input type="text" style="width: 100%" placeholder="Username"  name="username" value="#{username}" />
+                </div>
+                <div class="ui-g-12">
+                    
+                    <input placeholder="Password" style="width: 100%" type="password" name="password" />
+                </div>
+                <div class="ui-g-12">
+                    <a href="#{_ctx}/forgotpassword">Forgot Password?</a>
+                </div>
+                <div class="ui-g-12 button-container">
+                	
+                    <button type="submit" style="width: 100%;padding: 8px;"  value="Login" icon="fa fa-user" styleClass="turquoise-btn">
+                    	<span class="fa fa-user"></span>
+                    	Login
+                    </button>
+                    
+                </div>
+            </div>
+        </div>
+        </form>
+        </c:if>
+        
+        <h:outputStylesheet name="css/layout-light-blue.css" library="poseidon-layout" />
+        <h:outputStylesheet name="base.css" library="css" /> 
+    </h:body>
+
+</html>

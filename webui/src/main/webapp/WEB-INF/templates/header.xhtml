@@ -8,33 +8,6 @@
 	xmlns:sec="http://www.springframework.org/security/tags"
 	xmlns:jedlab="http://java.sun.com/jsf/composite/comp">
 
-	<ui:fragment rendered="#{not empty securityBean.currentUser}">
-		<div class="w3-panel w3-light-grey w3-padding rtl-dir">
-		<div class="row gutters auto">
-			<div class="col">
-				<h:outputText value="#{msgs['User_Name']}"></h:outputText>
-				#{' : '}
-				<h:outputText value="#{securityBean.currentUser.username}"></h:outputText>
-			</div>
-			<div class="col">
-				<h:outputText value=" "></h:outputText>
 	
-				<h:outputText value=" "></h:outputText>
-			</div>
-			<div class="col">
-				<h:outputText value="#{msgs['Last_Login']}"></h:outputText>
-				#{' : '}
-				<h:outputText value="#{securityBean.lastLogin}"
-					>
-					<f:attribute name="showTime" value="true" />
-				</h:outputText>
-			</div>
-		</div>
-
-
-</div>		
-
-
-	</ui:fragment>
 </ui:composition>
 
