@@ -1,0 +1,52 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:jedlab="http://java.sun.com/jsf/composite/comp"
+	xmlns:sec="http://www.springframework.org/security/tags"
+                template="/WEB-INF/poseidon/template.xhtml">
+
+    <ui:define name="title">File List</ui:define>
+
+    <ui:define name="viewname">File List</ui:define>
+
+	<ui:define name="metadata">
+		<f:metadata>
+			
+		</f:metadata>
+	</ui:define>
+	
+	<ui:define name="head">
+           
+       </ui:define>
+
+	<ui:define name="content">
+		
+		
+		<h:form id="form" enctype="multipart/form-data">
+		
+			<ui:decorate template="/WEB-INF/templates/sameLineEdit.xhtml">
+				<ui:define name="label">#{msgs['Image']}</ui:define>
+				
+				<p:fileUpload value="#{fileHome.file}" mode="simple" skinSimple="true" sizeLimit="2048"/>
+
+				<ui:define name="msg">
+
+				</ui:define>
+				<ui:define name="desc">
+					
+				</ui:define>
+			</ui:decorate>
+			
+			
+			<h:commandButton value="#{msgs['Save']}" styleClass="button green w3-margin"	
+							 action="#{fileHome.persist()}"></h:commandButton>
+			
+		</h:form>
+		
+		
+	</ui:define>
+
+</ui:composition>
+

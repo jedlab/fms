@@ -17,6 +17,8 @@ public class FMSConfiguration
     
     private String url;
 
+    
+    private String fileLocation;
 
 
 }

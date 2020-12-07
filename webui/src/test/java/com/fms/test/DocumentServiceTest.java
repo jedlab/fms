@@ -54,16 +54,16 @@ public class DocumentServiceTest {
 	@Test
 	@Transactional
 	@Commit
-	@Ignore
+//	@Ignore
 	public void testdocumentInsertion()
 	{
 		Assert.notNull(documentService);
 		FolderEntity entity = new FolderEntity();
-		entity.setName("my folder");
+		entity.setName("my folder 2");
 		//
 		
 		UserEntity ue = new UserEntity();
-		ue.setId(7L);
+		ue.setId(3L);
 		entity.setOwner(ue);
 		//
 		entity.setPermission(Permission.OWNER);

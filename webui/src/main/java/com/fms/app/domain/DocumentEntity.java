@@ -1,5 +1,7 @@
 package com.fms.app.domain;
 
+import java.io.InputStream;
+
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
@@ -75,6 +77,12 @@ public class DocumentEntity extends PO {
 	@Column(name = "permission", table = "doc_access")
 	@Enumerated(EnumType.STRING)
 	private Permission permission;
+	
+	@Column(name="file_path")
+	private String filePath;
+	
+	@Transient
+	private InputStream data;
 
 	public enum Type {
 		HOME, SHARE, TRASH;
